@@ -41,7 +41,8 @@ def user():
 
 @app.route("/dashboard")
 def admin_dashboard():
-    return render_template("admin_dashboard.html")
+    lots = ParkingLot.query .all()
+    return render_template("admin_dashboard.html",lots = lots )
 
 @app.route("/admin")
 def admin():
