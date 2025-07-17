@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parking Lot Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='color.css') }}">
+
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <!-- Logo -->
+    <div class="logo">
+      
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="menu">
+      <ul>
+        <li class="active">
+          <a href="/dashboard">
+            <span class="icon">📊</span>
+            <span class="label">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/lotspace">
+            <span class="icon">📁</span>
+            <span class="label">Lot space</span>
+          </a>
+        </li>
+        <li>
+          <a href="/usermenu">
+            <span class="icon">👥</span>
+            <span class="label">Users</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- User Profile -->
+    <div class="user-profile">
+     
+      <div class="user-info">
+        <strong>Amanda</strong><br />
+        <span>View profile</span>
+      </div>
+      <div class="settings-icon">⚙️</div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="top-bar">
+      <select class="dropdown">
+        <option>Search by</option>
+        <option>Lot Name</option>
+        <option>User</option>
+      </select>
+
+      <input type="text" class="search-bar" placeholder="Search product..." />
+
+      <a href="/createlot" class="create-button">+ Create Lot</a>
+
+    </header>
+        
+       {% block content %}{% endblock %}
+  </main>
+
+</body>
+</html>

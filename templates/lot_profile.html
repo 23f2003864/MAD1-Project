@@ -1,0 +1,35 @@
+{% extends 'baselot.html' %}
+{% block content %}
+    <form class="profile-container" method="post" action="/delete_lot/{{lot.id}}">
+        <!-- delete button later change its position-->
+        <button type="submit" class="danger-btn"  onclick="return confirm('Are you sure you want to delete this lot?');">
+            Delete
+        </button>
+        <h2>Parking Lot Profile</h2>
+        <div class="form-group">
+            <label for="prime_location_name">Prime Location Name</label>
+            <input type="text" id="prime_location_name" name="prime_location_name" value="{{lot.prime_location_name}}">
+        </div>
+        <div class="form-group">
+            <label for="price_per_hour">Price Per Hour (₹)</label>
+            <input type="number" id="price_per_hour" name="price_per_hour" min="0" value="{{lot.price_per_hour}}">
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" value="{{lot.id.address}}">
+        </div>
+        <div class="form-group">
+            <label for="pincode">Pincode</label>
+            <input type="text" id="pincode" name="pincode" pattern="\d{6}" maxlength="6" value="{{lot.pincode}}">
+        </div>
+        <div class="form-group">
+            <label for="max_num_of_spots">Maximum Number of Spots</label>
+            <input type="number" id="max_num_of_spots" name="max_num_of_spots" min="1" max="100" value="{{lot.Max_num_of_spots}}">
+        </div>
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button type="button" class="cancel-btn" onclick="window.location.href='#'">Cancel</button>
+            <button type="submit" class="save-btn">Save</button>
+        </div>
+    </form>
+{% endblock %}
